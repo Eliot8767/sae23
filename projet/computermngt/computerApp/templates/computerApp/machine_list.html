@@ -1,0 +1,35 @@
+{% extends "index.html" %}
+
+{% block content %}
+<h1 > Liste des machines</h1>
+{% if machines %}
+<button type="button" class="btn btn-success" style="float: right;">Ajouter</button>
+<table class="table">
+    <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Handle</th>
+         
+        </tr>
+      </thead>
+      <tbody>
+    {% for machine in machines %}
+        <tr>
+        <th scope="row">1</th>
+        <td>{{ machine.id }}</td>
+        <td>{{ machine.nom }}</td>
+        <td>@mdo</td>
+        </tr>
+{% endfor %}
+
+</tbody>
+</table>
+{% else %}
+<p>Il n\'y a pas de machine. </p >
+{% endif %}
+{% endblock %}
+
+
+

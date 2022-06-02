@@ -1,0 +1,79 @@
+
+<!DOCTYPE html >
+<html lang= "fr">
+<head >
+{% block title %}
+<title > Bibliotheque locale </title >
+{% endblock %}
+<meta charset= " utf-8 ">
+<meta name= " viewport " content= " width=device-width ,
+initial-scale=1 ">
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+{% load static %}
+<link rel= "stylesheet" href= "{% static 'css/style.css' %}">
+</head >
+<body >
+
+<nav class="navbar navbar-expand navbar-dark bg-dark" aria-label="Second navbar example">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><h1>R&T Dev </h1></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExample02">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href= "{% url 'index' %}" style="text-decoration: none;">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"href= "{% url 'machines' %} ">Machines</a>
+        </li>
+      </ul>
+      <form role="search">
+        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+
+{% block sidebar %}
+<h2 > Menu </h2>
+<ul id=" menu ">
+<li ><a href= "{% url 'index' %}" style="text-decoration: none;"> Home  </a></li>
+<li ><a href= "{% url 'machines' %}" style="text-decoration: none;"> Machines </a></li>
+</ul>
+{% endblock %}
+
+<br>
+{% block content %}
+<div class="px-4 py-5 my-5 text-center">
+    {% load static %}
+    <img class = "d-block mx-auto mb-4" src= "{% static 'computerapp/images/img.jpeg' %}" alt= "" style= " width:72;height:57px; ">
+    <h1 class="display-5 fw-bold">ENTREPRISE</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <button type="button" class="btn btn-primary btn-lg px-4 gap-3"> Equipements</button>
+        <a type="button" href= "{% url 'machines' %}" class="btn btn-outline-secondary btn-lg px-4">Liste des Machine</a>
+      </div>
+    </div>
+  </div>
+
+  
+
+
+
+
+{% endblock %}
+
+
+<div><a href="about">About</a></div>
+</body >
+</html >
