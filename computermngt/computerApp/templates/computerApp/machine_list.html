@@ -13,18 +13,17 @@
           <th scope="col">Handle</th>
          
         </tr>
-      </thead>
+    </thead>
       <tbody>
-    {% for machine in machines %}
-        <tr>
-        <th scope="row">1</th>
-        <td>{{ machine.id }}</td>
-        <td>{{ machine.nom }}</td>
-        <td>@mdo</td>
-        </tr>
-{% endfor %}
-
-</tbody>
+        {% for machine in machines %}
+            <tr>
+            <th scope="row">1</th>
+            <td>{{ machine.id }}</td>
+            <td>{{ machine.nom }}</td>
+            <td>@mdo</td>
+            </tr>
+        {% endfor %}
+      </tbody>
 </table>
 {% else %}
 <p>Il n\'y a pas de machine. </p >
